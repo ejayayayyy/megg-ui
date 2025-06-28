@@ -16,6 +16,8 @@ import {
   Upload,
   X,
   Trash,
+  Trash2,
+  SaveOff,
 } from "lucide-react";
 
 export default function MachinesPage() {
@@ -533,8 +535,9 @@ export default function MachinesPage() {
                   <div className="flex items-center gap-2 mt-2">
                     <button
                       onClick={() => setShowConfirmDeleteModal(false)}
-                      className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors cursor-pointer"
+                      className="px-4 py-2 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-700 transition-colors flex items-center justify-center cursor-pointer gap-2 "
                     >
+                      <SaveOff className="w-5 h-5" />
                       Cancel
                     </button>
                     <button
@@ -546,12 +549,13 @@ export default function MachinesPage() {
                       disabled={
                         enteredMachineName.trim() !== machineToDelete.name
                       }
-                      className={`px-4 py-2 rounded-lg text-white transition-colors w-full  ${
+                      className={`px-4 py-2 rounded-lg text-white transition-colors w-full  flex items-center justify-center cursor-pointer gap-2 ${
                         enteredMachineName.trim() !== machineToDelete.name
                           ? "bg-red-300 cursor-not-allowed"
                           : "bg-red-500 hover:bg-red-600 cursor-pointer"
                       }`}
                     >
+                      <Trash2 className="w-5 h-5" />
                       Delete
                     </button>
                   </div>
